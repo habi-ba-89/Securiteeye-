@@ -1289,3 +1289,17 @@ body:has(.signup-page) {
     font-size: 17px;
   }
 }
+
+
+/* ===== Match the background color across the entire Login / Sign Up page ===== */
+html:has(body .login-page),
+html:has(body .signup-page),
+body:has(.login-page),
+body:has(.signup-page) {
+  background-color: #dffffa !important;
+}
+
+.login-page,
+.signup-page {
+  background-color: #dffffa !important;
+}
