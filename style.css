@@ -1129,3 +1129,163 @@ footer { padding: 24px 5%; text-align: center; background: #092f31; color: #e9ff
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+
+/* ==================================================
+   LOGIN & SIGN UP - FINAL RESPONSIVE SIZE FIX
+   ================================================== */
+
+/* Keep space for the fixed header on all screen sizes */
+body:has(.login-page),
+body:has(.signup-page) {
+  padding-top: 80px;
+  min-height: 100vh;
+}
+
+/* Center the forms below the header */
+.login-page,
+.signup-page {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  min-height: calc(100svh - 80px);
+  padding: 32px 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Same card dimensions and spacing on both pages */
+.logIn-form,
+.signup-form {
+  width: min(100%, 440px);
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 36px);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #dceeee;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(0, 70, 70, 0.12);
+}
+
+/* Headings */
+.logIn-form h2,
+.signup-form h2 {
+  margin: 0 0 4px;
+  text-align: center;
+  font-size: clamp(25px, 4vw, 31px);
+  line-height: 1.25;
+  color: #123b3b;
+}
+
+/* Form description */
+.logIn-form .form-note,
+.signup-form .form-note,
+.form-note {
+  font-size: 14px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+/* Inputs */
+.logIn-form input,
+.signup-form input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 13px 15px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #111827;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+}
+
+.logIn-form input:focus,
+.signup-form input:focus {
+  border-color: #0ea5a5;
+  box-shadow: 0 0 0 3px rgba(14, 165, 165, 0.12);
+}
+
+/* Submit buttons */
+.logIn-form button,
+.signup-form button {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 18px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  background: #0ea5a5;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.logIn-form button:hover,
+.signup-form button:hover {
+  background: #0a8585;
+  transform: translateY(-1px);
+}
+
+/* Tablet header is taller */
+@media (max-width: 900px) {
+  body:has(.login-page),
+  body:has(.signup-page) {
+    padding-top: 145px;
+  }
+
+  .login-page,
+  .signup-page {
+    min-height: calc(100vh - 145px);
+    min-height: calc(100svh - 145px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  body:has(.login-page),
+  body:has(.signup-page) {
+    padding-top: 158px;
+  }
+
+  .login-page,
+  .signup-page {
+    min-height: calc(100vh - 158px);
+    min-height: calc(100svh - 158px);
+    padding: 22px 14px;
+    align-items: center;
+  }
+
+  .logIn-form,
+  .signup-form {
+    width: 100%;
+    max-width: 420px;
+    padding: 24px 20px;
+    gap: 14px;
+    border-radius: 16px;
+  }
+
+  .logIn-form h2,
+  .signup-form h2 {
+    font-size: 25px;
+  }
+
+  .logIn-form input,
+  .signup-form input {
+    min-height: 46px;
+    padding: 12px 13px;
+    font-size: 16px;
+  }
+
+  .logIn-form button,
+  .signup-form button {
+    min-height: 46px;
+    font-size: 17px;
+  }
+}
