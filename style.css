@@ -1303,3 +1303,23 @@ body:has(.signup-page) {
 .signup-page {
   background-color: #dffffa !important;
 }
+
+
+/* ===== One continuous background on Login and Sign Up pages ===== */
+html:has(body .login-page),
+html:has(body .signup-page),
+body:has(.login-page),
+body:has(.signup-page),
+body:has(.login-page) header,
+body:has(.signup-page) header,
+.login-page,
+.signup-page {
+  background: #dffffa !important;
+}
+
+/* Remove the different-colored strip under the fixed header */
+body:has(.login-page) header,
+body:has(.signup-page) header {
+  border-bottom-color: #dffffa !important;
+  box-shadow: none !important;
+}
